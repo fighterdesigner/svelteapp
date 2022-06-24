@@ -1,5 +1,8 @@
 # Svelte + Vite
 
+## take look from here:
+https://beautiful-paletas-8dd4fb.netlify.app
+
 This template should help get you started developing with Svelte in Vite.
 
 ## Recommended IDE Setup
