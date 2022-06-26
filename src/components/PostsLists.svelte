@@ -1,5 +1,6 @@
 <script>
 import { createEventDispatcher } from 'svelte';
+import {fade, scale} from 'svelte/transition';
 const dispatch = createEventDispatcher();
 
 export let allPosts;
@@ -10,7 +11,7 @@ const deletePost = (postId) => {
 
 <section>
     {#each allPosts as post (post.id)}
-        <div>
+        <div in:scale out:fade>
             <button on:click={() => deletePost(post.id)}>x</button>
             <h2>{post.title}</h2>
             <p>{post.body}</p>

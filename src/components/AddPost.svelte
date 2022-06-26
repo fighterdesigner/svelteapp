@@ -1,6 +1,7 @@
 <script>
     import {posts} from '../store.js';
     import {addApost} from '../service.js';
+    import { fly } from 'svelte/transition';
     let title = "";
     let body = "";
     let inputError = false;
@@ -34,11 +35,11 @@
     <form on:submit={submitPostFront}>
         <input on:keydown={() => inputError = false} bind:value={title} type="text" placeholder="Enter Title..">
         {#if inputError}
-            <span>Please enter title</span>
+            <span in:fly>Please enter title</span>
         {/if}
         <textarea on:keydown={() => textareaError = false} bind:value={body} placeholder="Enter Body..."></textarea>
         {#if textareaError}
-            <span>Please enter body</span>
+            <span in:fly>Please enter body</span>
         {/if}
         <button on:click={submitPostFront}>Save</button>
     </form>
